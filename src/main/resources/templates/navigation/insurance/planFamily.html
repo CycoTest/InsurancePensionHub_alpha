@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{common/layouts/layout}"
+      layout:fragment="Content">
+<head></head>
+<body>
+<!-- content -->
+    <h2>가족 보장</h2>
+
+    <!-- insurance banner -->
+    <div th:replace="common/fragments/banner/insuranceBanner :: InsuranceBanner"></div>
+
+    <!-- search list -->
+    <div class="dropdown container d-flex align-items-center justify-content-between">
+        <form th:action="@{insurance/family/search}" th:object="${boardSearch}" method="post">
+            <button class="btn btn-secondary dropdown-toggle" type="text" data-bs-toggle="dropdown" aria-expanded="false">
+                제목
+            </button>
+            <ul class="dropdown-menu">
+                <li>
+                    <a class="dropdown-item" th:onclick="|document.forms[0].category.value='번호'; document.forms[0].submit();|" href="#">번호</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" th:onclick="|document.forms[0].category.value='제목'; document.forms[0].submit();|" href="#">제목</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" th:onclick="|document.forms[0].category.value='항목'; document.forms[0].submit();|" href="#">항목</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" th:onclick="|document.forms[0].category.value='내용'; document.forms[0].submit();|" href="#">내용</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" th:onclick="|document.forms[0].category.value='제목+내용'; document.forms[0].submit();|" href="#">제목+내용</a>
+                </li>
+            </ul>
+            <input type="hidden" th:field="*{category}" />
+        </form>
+    </div>
+
+
+<!-- search bar -->
+    <div class="container">
+        <form action="#" method="#">
+            <div class="d-flex justify-content-center align-items-center">
+                <button aria-expanded="false" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"
+                        type="button">
+                    제목
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+
+                <!-- Search Bar -->
+                <input class="w-25 h-50 form-control mx-2" placeholder="" type="search">
+                <button class="btn btn-outline-secondary" type="submit">Search</button>
+            </div>
+        </form>
+    </div>
+
+
+<!-- insurance table -->
+    <div class="container">
+        <table class="table table-bordered m5, p-5">
+            <thead>
+            <tr>
+                <th scope="col-1">NO.</th>
+                <th scope="col-5">제목</th>
+                <th scope="col-1">날짜</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="post : ${insuranceFamily}">
+                <th scope="row" th:text="${post.no}"></th>
+                <td th:text="${post.title}"></td>
+                <td th:text="${post.date}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+</body>
+</html>
