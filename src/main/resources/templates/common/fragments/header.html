@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="utf-8" xmlns:th="http://www.thymeleaf.org"
+      th:fragment="HeaderFragment">
+<head>
+
+</head>
+<body>
+    <!--로그인 버튼-->
+    <div class="container d-flex align-items-center justify-content-between">
+
+        <a class="navbar-brand mx-auto" href="#">
+            <img src="../../static/assets/sampleicon.jpg" alt="Bootstrap" width="100" height="50">
+        </a>
+
+
+        <div class="row justify-content-end">
+            <div class="col-auto">
+                <button type="button" class="btn btn-secondary">Log-in</button>
+                <button type="button" class="btn btn-secondary">Sign Up</button>
+            </div>
+        </div>
+    </div>
+
+    <!--메인 메뉴-->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+
+        <div class="container-fluid justify-content-start">
+
+            <!-- 보험 드롭 다운 메뉴 -->
+            <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    보험
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">보험 1</a></li>
+                    <li><a class="dropdown-item" href="#">보험 2</a></li>
+                </ul>
+            </div>
+            <!--연금-->
+            <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    연금
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">연금 1</a></li>
+                    <li><a class="dropdown-item" href="#">연금 2</a></li>
+                </ul>
+            </div>
+
+            <!--상담 및 설계-->
+            <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    상담 및 설계
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">상담 및 설계 1</a></li>
+                    <li><a class="dropdown-item" href="#">상담 및 설계 2</a></li>
+                </ul>
+            </div>
+
+            <!--설문지 양식-->
+            <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    설문지 양식
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">설문지 양식1</a></li>
+                    <li><a class="dropdown-item" href="#">설문지 양식2</a></li>
+                </ul>
+            </div>
+
+            <!--공시 자료실-->
+            <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    공시 자료실
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">공시 자료실 1</a></li>
+                    <li><a class="dropdown-item" href="#">공시 자료실 2</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 마우스 오버 시 드롭다운 표시되게 하는 JS 코드 -->
+    <script src="../../static/javaScript/menuDropDown.js"></script>
+</body>
+</html>
