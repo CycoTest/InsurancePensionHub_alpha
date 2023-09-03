@@ -2,7 +2,7 @@ package com.alpha.InsurancePensionHub.domain.insurance;
 
 import java.time.LocalDate;
 
-public class insuranceFamily {
+public class Tax_Insurance {
 
     private Long no;
     private String title;
